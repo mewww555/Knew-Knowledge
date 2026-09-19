@@ -21,7 +21,7 @@ body {
   color: var(--ink);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 20px;
-  line-height: 1.55;
+  line-height: 1.62;
 }
 
 .paper-noise {
@@ -79,26 +79,49 @@ a { color: inherit; }
 }
 .hero h1 { margin: 0; font-size: clamp(78px, 10vw, 132px); line-height: .74; }
 .hero h1 em { font-weight: 400; }
-.hero-intro { max-width: 690px; margin: 35px 0 0; font-size: 23px; line-height: 1.55; }
+.hero-intro {
+  max-width: 650px;
+  margin: 38px 0 0;
+  font-size: 24px;
+  line-height: 1.48;
+  font-weight: 500;
+}
 .hero-note {
   align-self: end;
   margin-bottom: 74px;
-  padding: 24px 22px 22px;
+  padding: 22px 22px 20px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: #574d52;
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 500;
   font-style: italic;
 }
-.flower-mark { display: block; color: var(--rose); font-size: 34px; margin-bottom: 12px; }
+.hero-note p { margin: 0; }
+.flower-mark {
+  display: block;
+  color: var(--rose);
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 11px;
+}
 
 .section-kicker {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   color: var(--plum-deep);
   font-size: 28px;
+}
+.section-kicker span::before {
+  content: "⁕";
+  display: inline-block;
+  margin-right: 9px;
+  color: var(--rose);
+  font-size: .72em;
+  transform: translateY(-1px);
 }
 .section-kicker::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
@@ -125,9 +148,14 @@ a { color: inherit; }
   text-transform: uppercase;
   letter-spacing: .16em;
 }
-.feature-copy h2 { margin: 10px 0 20px; font-size: 52px; line-height: .99; font-weight: 500; }
+.feature-copy h2 { margin: 8px 0 18px; font-size: 52px; line-height: 1.02; font-weight: 500; }
 .feature-copy h2 a { text-decoration: none; }
-.feature-copy p { font-size: 19px; }
+.feature-copy p {
+  margin: 0 0 4px;
+  font-size: 20px;
+  line-height: 1.58;
+  font-weight: 500;
+}
 .text-link {
   display: inline-block;
   margin-top: 18px;
@@ -176,7 +204,13 @@ a { color: inherit; }
   color: var(--rose);
   font-size: 29px;
 }
-.question-block p { margin: 0; color: var(--plum-deep); font-size: 33px; line-height: 1.35; }
+.question-block p {
+  margin: 0;
+  color: var(--plum-deep);
+  font-size: 33px;
+  line-height: 1.34;
+  font-weight: 500;
+}
 .question-block span {
   display: block;
   margin-top: 20px;
@@ -193,13 +227,35 @@ a { color: inherit; }
   gap: 62px;
   padding: 10px 0 70px;
 }
-.large-note { font-size: 25px; line-height: 1.42; }
+.large-note {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.48;
+  font-weight: 500;
+}
 .clean-list { margin: 0; padding: 0; list-style: none; }
-.clean-list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.clean-list li {
+  padding: 11px 0;
+  line-height: 1.42;
+  border-bottom: 1px solid var(--line);
+}
 
-.page-head { max-width: 790px; padding: 100px 0 66px; }
-.page-head h1 { margin: 0 0 18px; font-size: clamp(62px, 8vw, 100px); line-height: .9; }
-.page-head p:not(.eyebrow) { font-size: 24px; }
+.page-head { max-width: 790px; padding: 94px 0 60px; }
+.page-head h1 { margin: 0 0 24px; font-size: clamp(62px, 8vw, 100px); line-height: .94; }
+.page-head p:not(.eyebrow) {
+  margin: 0;
+  max-width: 730px;
+  font-size: 24px;
+  line-height: 1.48;
+  font-weight: 500;
+}
+.page-head > .eyebrow::before {
+  content: "⁕";
+  margin-right: 8px;
+  color: var(--rose);
+  font-family: Georgia, serif;
+  font-size: 1.25em;
+}
 .archive-list { margin-bottom: 80px; }
 .empty-state { min-height: 320px; color: var(--muted); }
 
@@ -209,7 +265,8 @@ a { color: inherit; }
   padding: 38px;
 }
 .dark-panel .eyebrow { color: #d8afc1; }
-.dark-panel h2 { margin-top: 0; font-size: 44px; font-weight: 500; }
+.dark-panel h2 { margin: 0 0 16px; font-size: 44px; line-height: 1.05; font-weight: 500; }
+.dark-panel p:not(.eyebrow) { margin: 0; font-weight: 500; line-height: 1.58; }
 
 .article-wrap { max-width: 860px; margin: 0 auto; padding: 94px 0 84px; }
 .article-header { max-width: 780px; margin-bottom: 18px; }
@@ -217,7 +274,8 @@ a { color: inherit; }
 .dek { color: #554a50; font-size: 25px; line-height: 1.4; }
 .article-meta { color: var(--muted); font: 500 9px/1.4 Inter, Arial, sans-serif; text-transform: uppercase; letter-spacing: .15em; }
 .article-wrap > .ornament { color: var(--rose); font-size: 34px; margin: 42px 0 38px; }
-.prose { max-width: 720px; font-size: 21px; line-height: 1.7; }
+.prose { max-width: 720px; font-size: 21px; line-height: 1.72; }
+.prose p { margin: 0 0 1.3em; }
 .prose h2 { margin-top: 2.1em; color: var(--plum-deep); font-size: 38px; line-height: 1.1; font-weight: 500; }
 .prose h3 { margin-top: 1.8em; font-size: 30px; font-weight: 500; }
 .prose blockquote { margin: 2em 0; padding-left: 25px; border-left: 2px solid var(--rose); color: #5e5057; font-style: italic; }
@@ -242,8 +300,9 @@ a { color: inherit; }
   .site-shell { padding: 0 22px 48px; }
   .site-header { align-items: flex-start; padding: 20px 0; }
   .site-nav { justify-content: flex-end; gap: 10px 15px; }
-  .hero { min-height: auto; grid-template-columns: 1fr; gap: 30px; padding: 70px 0 80px; }
-  .hero h1 { font-size: clamp(70px, 21vw, 112px); }
+  .hero { min-height: auto; grid-template-columns: 1fr; gap: 34px; padding: 62px 0 68px; }
+  .hero h1 { font-size: clamp(70px, 21vw, 112px); line-height: .79; }
+  .hero-intro { margin-top: 32px; font-size: 22px; line-height: 1.5; }
   .hero-note { margin: 0; max-width: 430px; }
   .feature-article,
   .two-column-home,
@@ -254,7 +313,9 @@ a { color: inherit; }
   .post-row { grid-template-columns: 1fr; gap: 6px; }
   .question-block { margin: 80px auto; padding: 50px 12px 42px; }
   .question-block p { font-size: 27px; }
-  .page-head { padding: 78px 0 54px; }
-  .article-wrap { padding-top: 74px; }
+  .page-head { padding: 70px 0 50px; }
+  .page-head h1 { margin-bottom: 20px; line-height: .96; }
+  .page-head p:not(.eyebrow) { font-size: 22px; line-height: 1.5; }
+  .article-wrap { padding-top: 70px; }
   .site-footer { flex-direction: column; }
 }
