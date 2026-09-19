@@ -4,11 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f4f2">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
-  {% assign asset_version = site.time | date: "%s" %}
   <script>
     try {
       const savedTheme = localStorage.getItem("knew-theme");
@@ -18,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style-v4.css' | relative_url }}">
   {% seo %}
   {% feed_meta %}
 </head>
@@ -79,6 +75,6 @@
       {% endfor %}
     ];
   </script>
-  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ asset_version }}" defer></script>
+  <script src="{{ '/assets/js/site-v4.js' | relative_url }}" defer></script>
 </body>
 </html>
