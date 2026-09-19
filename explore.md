@@ -6,6 +6,7 @@ permalink: /explore/
 <section class="page-head compact-head">
   <p class="eyebrow">Explore</p>
   <h1>Follow an idea.</h1>
+  <p class="map-intro">Choose an idea and follow where it leads.</p>
 </section>
 
 <nav class="explore-actions" aria-label="Explore Knew Knowledge">
@@ -16,6 +17,7 @@ permalink: /explore/
 
 <section class="idea-map-wrap" aria-labelledby="idea-map-title">
   <div class="section-kicker"><span id="idea-map-title">Map of ideas</span></div>
+  <p class="map-explainer">Each point is a theme. Tap one to search the archive for everything connected to it.</p>
   <div class="idea-map">
     <svg class="idea-lines" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
       <path d="M500 280 L190 105 M500 280 L800 105 M500 280 L145 330 M500 280 L850 330 M500 280 L280 500 M500 280 L720 500 M190 105 L145 330 M800 105 L850 330 M280 500 L145 330 M720 500 L850 330"/>
