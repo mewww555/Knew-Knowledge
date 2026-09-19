@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f4f2">
+  {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("knew-theme");
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,11 +19,62 @@
   {% feed_meta %}
 </head>
 <body>
+  <div class="ambient-glass" aria-hidden="true"></div>
   <div class="paper-noise" aria-hidden="true"></div>
+
   <div class="site-shell">
     {% include header.html %}
     <main>{{ content }}</main>
     {% include footer.html %}
   </div>
+
+  <dialog class="search-panel" id="site-search" aria-labelledby="search-title">
+    <div class="search-panel-inner">
+      <div class="search-topline">
+        <p class="eyebrow" id="search-title">Search the archive</p>
+        <button class="search-close" type="button" data-search-close aria-label="Close search">×</button>
+      </div>
+      <input class="search-input" id="search-input" type="search" autocomplete="off" placeholder="idea, object, question…">
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+    </div>
+  </dialog>
+
+  <button class="notes-tab" type="button" data-notes-toggle aria-controls="reader-notes" aria-expanded="false">Notes</button>
+  <aside class="notes-panel" id="reader-notes" hidden>
+    <div class="notes-handle" data-notes-drag>
+      <span>Notes</span>
+      <button type="button" data-notes-close aria-label="Close notes">×</button>
+    </div>
+    <textarea id="reader-notes-text" aria-label="Notes for this page" placeholder="Write here…"></textarea>
+    <div class="notes-meta">
+      <span id="notes-status">Saved on this device</span>
+      <button type="button" data-notes-clear>Clear</button>
+    </div>
+  </aside>
+
+  <script>
+    window.KNEW_SEARCH = [
+      {% for post in site.posts %}
+      {
+        title: {{ post.title | jsonify }},
+        url: {{ post.url | relative_url | jsonify }},
+        text: {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+        kind: "Writing"
+      },
+      {% endfor %}
+      {% assign searchable_pages = site.pages | where_exp: "p", "p.title" %}
+      {% for p in searchable_pages %}
+      {% unless p.url == page.url or p.title == "Not Found" or p.searchable == false %}
+      {
+        title: {{ p.title | jsonify }},
+        url: {{ p.url | relative_url | jsonify }},
+        text: {{ p.content | strip_html | strip_newlines | truncatewords: 50 | jsonify }},
+        kind: "Page"
+      },
+      {% endunless %}
+      {% endfor %}
+    ];
+  </script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>
 </html>

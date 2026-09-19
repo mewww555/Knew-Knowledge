@@ -6,7 +6,7 @@ permalink: /research/
 <section class="page-head">
   <p class="eyebrow">Research</p>
   <h1>Questions worth following.</h1>
-  <p>This page can grow into a record of projects, methods, papers, posters, and conference work.</p>
+  <p>Projects, methods, papers, and work in progress.</p>
 </section>
 
 <section class="research-grid">
@@ -21,9 +21,20 @@ permalink: /research/
       <li>Ontology, epistemology, and social constructions of reality</li>
     </ul>
   </article>
-  <article class="dark-panel">
+  <article class="dark-panel glass-panel">
     <p class="eyebrow">Current seed</p>
     <h2>Virtual Selves</h2>
-    <p>An interdisciplinary project on identity, memory, morality, attachment, and embodiment through avatars and virtual worlds.</p>
+    <p>Identity, memory, morality, attachment, and embodiment through avatars and virtual worlds.</p>
   </article>
+</section>
+
+<section class="research-notebook" aria-labelledby="research-notebook-title">
+  <div class="section-kicker"><span id="research-notebook-title">Living notebook</span></div>
+  <div class="research-stages">
+    <div class="research-stage active"><span>01</span><strong>Seed</strong><p>Virtual Selves</p></div>
+    <div class="research-stage"><span>02</span><strong>Gathering</strong></div>
+    <div class="research-stage"><span>03</span><strong>Thinking</strong></div>
+    <div class="research-stage"><span>04</span><strong>Writing</strong></div>
+    <div class="research-stage"><span>05</span><strong>Finished</strong></div>
+  </div>
 </section>

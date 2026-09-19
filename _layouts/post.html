@@ -7,9 +7,38 @@ layout: default
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="dek">{{ page.subtitle }}</p>{% endif %}
     {% if page.date %}<p class="article-meta">{{ page.date | date: "%B %-d, %Y" }}</p>{% endif %}
+    {% if page.last_modified_at %}<p class="article-meta">Updated {{ page.last_modified_at | date: "%B %-d, %Y" }}</p>{% endif %}
   </header>
+
   <div class="ornament" aria-hidden="true">✤</div>
+
+  {% if page.margin_note %}
+  <aside class="margin-note">
+    <span>Marginalia</span>
+    <p>{{ page.margin_note }}</p>
+  </aside>
+  {% endif %}
+
   <div class="prose">
     {{ content }}
   </div>
+
+  <aside class="article-location" aria-label="You are here">
+    <span class="micro-label">You are here</span>
+    <div class="location-orbit">
+      {% for category in page.categories %}
+        <button type="button" data-search-term="{{ category | escape }}">{{ category }}</button>
+      {% endfor %}
+      {% for tag in page.tags limit: 4 %}
+        <button type="button" data-search-term="{{ tag | escape }}">{{ tag }}</button>
+      {% endfor %}
+      <a href="{{ '/explore/' | relative_url }}">Map</a>
+    </div>
+  </aside>
+
+  <nav class="reading-trails" aria-label="Reading trails">
+    <a href="{{ '/essays/' | relative_url }}"><span>Keep going</span>Essays</a>
+    <a href="{{ '/research/' | relative_url }}"><span>Go deeper</span>Research</a>
+    <button type="button" data-rabbit><span>Go stranger</span>Wander</button>
+  </nav>
 </article>
