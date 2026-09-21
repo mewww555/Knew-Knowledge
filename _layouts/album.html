@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<article class="album-wrap">
+  <header class="album-hero">
+    <div class="album-cover-placeholder" aria-label="Album artwork placeholder">
+      <span>artwork / visual direction later</span>
+    </div>
+    <div class="album-head-copy">
+      <p class="eyebrow">Album analysis{% if page.status %} · {{ page.status }}{% endif %}</p>
+      <h1 class="album-title">{{ page.title }}</h1>
+      <p class="album-artist">{{ page.artist }}</p>
+      <div class="album-facts" aria-label="Album facts">
+        {% if page.release_date %}<span>{{ page.release_date | date: "%b %-d, %Y" }}</span>{% endif %}
+        {% if page.track_count %}<span>{{ page.track_count }} tracks</span>{% endif %}
+        {% if page.runtime %}<span>{{ page.runtime }}</span>{% endif %}
+        {% if page.genre %}<span>{{ page.genre }}</span>{% endif %}
+      </div>
+      <div class="album-source-links">
+        {% if page.bandcamp %}<a href="{{ page.bandcamp }}" rel="noopener">Bandcamp ↗</a>{% endif %}
+        {% if page.apple_music %}<a href="{{ page.apple_music }}" rel="noopener">Apple Music ↗</a>{% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="album-body">
+    <div class="album-prose prose">
+      {{ content }}
+    </div>
+
+    <aside class="album-side" aria-label="Analysis lenses">
+      <p class="eyebrow">Lenses</p>
+      <h2>What I’m listening for</h2>
+      <ul>
+        <li>Production & texture</li>
+        <li>Structure & sequencing</li>
+        <li>Lyrics & recurring ideas</li>
+        <li>Samples & references</li>
+        <li>Visual language</li>
+        <li>What changes on relisten</li>
+      </ul>
+    </aside>
+  </div>
+</article>
