@@ -995,7 +995,7 @@ main { animation: page-in .38s ease both; }
 }
 
 
-/* Daylight ambient field — no stained-glass geometry */
+/* Daylight ambient field */
 :root:not([data-theme="midnight"]) .ambient-stars {
   opacity: .24;
 }
