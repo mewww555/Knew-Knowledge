@@ -11,6 +11,9 @@ collections:
   notes:
     output: true
     permalink: /field-notes/:name/
+  albums:
+    output: true
+    permalink: /albums/:name/
 defaults:
   - scope:
       path: ""
@@ -22,6 +25,11 @@ defaults:
       type: "notes"
     values:
       layout: post
+  - scope:
+      path: ""
+      type: "albums"
+    values:
+      layout: album
 exclude:
   - README.md
   - Gemfile
