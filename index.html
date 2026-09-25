@@ -4,30 +4,30 @@ title: Home
 ---
 <section class="hero">
   <div class="hero-copy">
-    <p class="eyebrow">An interdisciplinary notebook</p>
+    <p class="eyebrow">{{ site.data.home.eyebrow | escape }}</p>
     <h1>Knew<br><em>Knowledge</em></h1>
-    <p class="hero-intro">Notes on consciousness, culture, virtual worlds, sacred things, and the strange ways humans decide what is real, meaningful, or true.</p>
+    <p class="hero-intro">{{ site.data.home.intro | escape }}</p>
   </div>
   <aside class="hero-note">
     <span class="flower-mark">❈</span>
-    <p>Research archive. Field notebook. Questions in progress.</p>
+    <p>{{ site.data.home.note | escape }}</p>
   </aside>
 </section>
 
 <nav class="doorway-row" aria-label="Ways to explore">
   <button class="doorway-link" type="button" data-rabbit>Wander</button>
-  <a class="doorway-link" href="{{ '/explore/' | relative_url }}">Map of ideas</a>
-  <a class="doorway-link" href="{{ '/curiosities/' | relative_url }}">Cabinet</a>
+  <a class="doorway-link" href="{{ '/explore/' | relative_url }}">{{ site.data.home.map_link | escape }}</a>
+  <a class="doorway-link" href="{{ '/curiosities/' | relative_url }}">{{ site.data.home.cabinet_link | escape }}</a>
 </nav>
 
 <section class="feature-section">
-  <div class="section-kicker"><span>Featured</span></div>
+  <div class="section-kicker"><span>{{ site.data.home.featured_label | escape }}</span></div>
   {% assign featured = site.posts | first %}
   {% if featured %}
   <article class="feature-article">
     <div class="feature-visual">
       <div class="image-placeholder">
-        <span>archival image / photograph</span>
+        <span>{{ site.data.home.featured_image_note | escape }}</span>
       </div>
     </div>
     <div class="feature-copy">
@@ -43,7 +43,7 @@ title: Home
 </section>
 
 <section class="recent-section">
-  <div class="section-kicker"><span>Recent Writing</span></div>
+  <div class="section-kicker"><span>{{ site.data.home.recent_label | escape }}</span></div>
   <div class="post-list">
     {% for post in site.posts limit: 4 %}
       <article class="post-row">
@@ -59,24 +59,22 @@ title: Home
 
 <section class="question-block">
   <div class="ornament" aria-hidden="true">❉</div>
-  <p>How do human beings determine what is real when consciousness itself is capable of producing radically different experiences of reality?</p>
-  <span>The question underneath everything.</span>
+  <p>{{ site.data.home.question | escape }}</p>
+  <span>{{ site.data.home.question_caption | escape }}</span>
 </section>
 
 <section class="two-column-home">
   <div>
     <div class="section-kicker"><span>Field Notes</span></div>
-    <p class="large-note">Short observations, half-formed questions, reading notes, and ideas that may eventually become something larger.</p>
+    <p class="large-note">{{ site.data.home.field_notes_intro | escape }}</p>
     <a class="text-link" href="{{ '/field-notes/' | relative_url }}">Browse field notes →</a>
   </div>
   <div>
     <div class="section-kicker"><span>Research Interests</span></div>
     <ul class="clean-list">
-      <li>Virtual identity & embodiment</li>
-      <li>Digital anthropology & game studies</li>
-      <li>Consciousness & altered states</li>
-      <li>Ritual, collecting & sacred value</li>
-      <li>Social construction of meaning</li>
+      {% for interest in site.data.home.research_interests %}
+      <li>{{ interest | escape }}</li>
+      {% endfor %}
     </ul>
   </div>
 </section>
